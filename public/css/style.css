@@ -1,5 +1,12 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
 }
 
 /* Navbar */
@@ -15,7 +22,7 @@ body {
 }
 
 /* Footer  */
-.f-info {
+footer .f-info {
   text-align: center;
   display: flex;
   height: 8rem;
@@ -24,24 +31,24 @@ body {
   justify-content: center;
   align-items: space-evenly;
 }
-.f-info-links,
-.f-info-socials,
-.f-info-brand {
+footer .f-info-links,
+footer .f-info-socials,
+footer .f-info-brand {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.f-info-socials i {
+footer .f-info-socials i {
   font-size: 1.2rem;
   margin-right: 1rem;
 }
-.f-info-links a {
+footer .f-info-links a {
   text-decoration: none;
   color: #222222;
 }
 
-.f-info-links a:hover {
+footer .f-info-links a:hover {
   text-decoration: underline;
 }
 
@@ -74,4 +81,9 @@ body {
 }
 .card-img-overlay:hover {
   opacity: 0.2;
+}
+
+/* New Listing Page */
+.add-btn {
+  background-color: #fe424d !important;
 }

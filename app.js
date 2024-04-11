@@ -30,6 +30,11 @@ async function main() {
 
 //Routes
 
+//Root Index
+app.get("/", (req, res) => {
+  res.render("listings/root.ejs");
+});
+
 //Index Route
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});

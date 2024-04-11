@@ -1,21 +1,73 @@
 <% layout("/layouts/boilerplate.ejs") %>
-<body>
-  <h3>Create a New Listing</h3>
-  <form action="/listings" method="post">
-    <input type="text" name="title" placeholder="Enter Title" />
+<div class="row">
+  <div class="col-8 offset-2">
     <br /><br />
-    <textarea name="description" id="" cols="30" rows="10">
-Enter the description of the property</textarea
-    >
-    <br /><br />
-    <input type="text" name="image" placeholder="Enter image url" />
-    <br /><br />
-    <input type="number" name="price" placeholder="Price in &#8377;" />
-    <br /><br />
-    <input type="text" name="location" placeholder="Enter Location" />
-    <br /><br />
-    <input type="text" name="country" placeholder="Enter Country" />
-    <br /><br />
-    <button>Airbnb your Property</button>
-  </form>
-</body>
+    <h2>Create a New Listing</h2>
+    <form action="/listings" method="post">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="Add a catchy title !"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="description"
+          id=""
+          cols="30"
+          rows="5"
+          class="form-control"
+          placeholder="Describe your listing in details..."
+        ></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input
+          type="text"
+          name="image"
+          placeholder="Enter image url"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="price"
+            placeholder="&#8377; 2000"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            name="country"
+            placeholder="India"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="location"
+          placeholder="Rohini, Delhi"
+          class="form-control"
+        />
+      </div>
+      <br />
+      <button class="btn btn-dark add-btn">Airbnb your Property</button>
+    </form>
+    <br /><br /><br />
+  </div>
+</div>
