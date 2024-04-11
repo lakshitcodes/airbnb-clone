@@ -3,11 +3,13 @@ const app = express();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const path = require("path");
+const methodOverride = require("method-override");
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 const port = 8080;
 const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
@@ -66,6 +68,21 @@ app.post("/listings", async (req, res) => {
         "Some error occured while listing your property !! \n Please try again."
       );
     });
+});
+
+//Edit Route
+app.get("/listings/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let listing = await Listing.findById(id);
+  res.render("listings/edit.ejs", { listing });
+});
+
+//Update in DB
+app.patch("/listings/:id", async (req, res) => {
+  let { id } = req.params;
+  let listing = req.body.listing;
+  await Listing.findByIdAndUpdate(id, { ...listing });
+  res.redirect(`/listings/${id}`);
 });
 
 // app.get("/testListing", async (req, res) => {

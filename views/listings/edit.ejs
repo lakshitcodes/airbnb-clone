@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb by Lakshit</title>
+    <link
+      rel="icon"
+      href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png"
+    />
+  </head>
+  <body>
+    <h3>Edit your Listing</h3>
+    <form action="/listings/<%=listing.id%>?_method=PATCH" method="post">
+      <input type="text" name="listing[title]" value="<%=listing.title%>" />
+      <br /><br />
+      <textarea name="listing[description]" id="" cols="30" rows="10">
+<%=listing.description%></textarea
+      >
+      <br /><br />
+      <input type="text" name="listing[image]" value="<%=listing.image%>" />
+      <br /><br />
+      <input type="number" name="listing[price]" value="<%=listing.price%>" />
+      <br /><br />
+      <input
+        type="text"
+        name="listing[location]"
+        value="<%=listing.location%>"
+      />
+      <br /><br />
+      <input type="text" name="listing[country]" value="<%=listing.country%>" />
+      <br /><br />
+      <button>Edit your property details</button>
+    </form>
+  </body>
+</html>
