@@ -26,6 +26,48 @@ async function main() {
 
 //Routes
 
+//Index Route
+app.get("/listings", async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("listings/index.ejs", { allListings });
+});
+
+//New Route
+app.get("/listings/new", (req, res) => {
+  res.render("listings/new.ejs");
+});
+
+//Show Route
+app.get("/listings/:id", async (req, res) => {
+  const { id } = req.params;
+  const listing = await Listing.findById(id);
+  res.render("listings/show.ejs", { listing });
+});
+
+//Create Route
+app.post("/listings", async (req, res) => {
+  let { title, description, image, price, location, country } = req.body;
+  let listing = new Listing({
+    title: title,
+    description: description,
+    image: image,
+    price: price,
+    location: location,
+    country: country,
+  });
+  await listing
+    .save()
+    .then(() => {
+      res.redirect("/listings");
+    })
+    .catch((e) => {
+      console.log(e);
+      res.send(
+        "Some error occured while listing your property !! \n Please try again."
+      );
+    });
+});
+
 // app.get("/testListing", async (req, res) => {
 //   let sampleListing = new Listing({
 //     title: "New Villa",
@@ -38,19 +80,6 @@ async function main() {
 //   console.log("Saved data");
 //   res.send("success");
 // });
-
-//Index Route
-app.get("/listings", async (req, res) => {
-  const allListings = await Listing.find({});
-  res.render("listings/index.ejs", { allListings });
-});
-
-//Show Route
-app.get("/listings/:id", async (req, res) => {
-  const { id } = req.params;
-  const listing = await Listing.findById(id);
-  res.render("listings/show.ejs", { listing });
-});
 
 app.listen(port, () => {
   console.log(`Server running at port ${port}`);
