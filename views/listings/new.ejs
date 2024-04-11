@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Airbnb by Lakshit</title>
-    <link
-      rel="icon"
-      href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png"
-    />
-  </head>
-  <body>
-    <h3>Create a New Listing</h3>
-    <form action="/listings" method="post">
-      <input type="text" name="title" placeholder="Enter Title" />
-      <br /><br />
-      <textarea name="description" id="" cols="30" rows="10">
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <h3>Create a New Listing</h3>
+  <form action="/listings" method="post">
+    <input type="text" name="title" placeholder="Enter Title" />
+    <br /><br />
+    <textarea name="description" id="" cols="30" rows="10">
 Enter the description of the property</textarea
-      >
-      <br /><br />
-      <input type="text" name="image" placeholder="Enter image url" />
-      <br /><br />
-      <input type="number" name="price" placeholder="Price in &#8377;" />
-      <br /><br />
-      <input type="text" name="location" placeholder="Enter Location" />
-      <br /><br />
-      <input type="text" name="country" placeholder="Enter Country" />
-      <br /><br />
-      <button>Airbnb your Property</button>
-    </form>
-  </body>
-</html>
+    >
+    <br /><br />
+    <input type="text" name="image" placeholder="Enter image url" />
+    <br /><br />
+    <input type="number" name="price" placeholder="Price in &#8377;" />
+    <br /><br />
+    <input type="text" name="location" placeholder="Enter Location" />
+    <br /><br />
+    <input type="text" name="country" placeholder="Enter Country" />
+    <br /><br />
+    <button>Airbnb your Property</button>
+  </form>
+</body>
