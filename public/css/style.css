@@ -86,4 +86,14 @@ footer .f-info-links a:hover {
 /* New Listing Page */
 .add-btn {
   background-color: #fe424d !important;
+  border: none;
+}
+
+/* Show Page  */
+.show-img {
+  height: 30vh;
+}
+
+.show-btn {
+  width: 100% !important;
 }
