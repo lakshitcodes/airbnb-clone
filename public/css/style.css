@@ -51,6 +51,9 @@ footer .f-info-links a {
 footer .f-info-links a:hover {
   text-decoration: underline;
 }
+.fa-brands {
+  color: black !important;
+}
 
 /* Cards */
 .card {
