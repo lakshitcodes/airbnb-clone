@@ -3,7 +3,7 @@
   <div class="col-8 offset-2">
     <br /><br />
     <h2>Create a New Listing</h2>
-    <form action="/listings" method="post">
+    <form action="/listings" method="post" novalidate class="needs-validation">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -11,7 +11,10 @@
           name="title"
           placeholder="Add a catchy title !"
           class="form-control"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Title should be valid.</div>
       </div>
 
       <div class="mb-3">
@@ -23,7 +26,9 @@
           rows="5"
           class="form-control"
           placeholder="Describe your listing in details..."
+          required
         ></textarea>
+        <div class="invalid-feedback">Please enter a short decription.</div>
       </div>
 
       <div class="mb-3">
@@ -43,7 +48,10 @@
             name="price"
             placeholder="&#8377; 2000"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Price should be valid.</div>
         </div>
         <div class="mb-3 col-md-8">
           <label for="country" class="form-label">Country</label>
@@ -52,7 +60,10 @@
             name="country"
             placeholder="India"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Country name should be valid.</div>
         </div>
       </div>
 
@@ -63,7 +74,10 @@
           name="location"
           placeholder="Rohini, Delhi"
           class="form-control"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Location should be valid.</div>
       </div>
       <br />
       <button class="btn btn-dark add-btn">Airbnb your Property</button>

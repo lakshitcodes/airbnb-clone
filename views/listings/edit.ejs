@@ -4,7 +4,12 @@
     <div class="col-8 offset-2">
       <br /><br />
       <h3>Edit your Listing</h3>
-      <form action="/listings/<%=listing.id%>?_method=PATCH" method="post">
+      <form
+        action="/listings/<%=listing.id%>?_method=PATCH"
+        method="post"
+        novalidate
+        class="needs-validation"
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input
@@ -12,7 +17,10 @@
             name="listing[title]"
             value="<%=listing.title%>"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Title should be valid.</div>
         </div>
 
         <div class="mb-3">
@@ -23,9 +31,11 @@
             cols="30"
             rows="10"
             class="form-control"
+            required
           >
 <%=listing.description%></textarea
           >
+          <div class="invalid-feedback">Please enter a short decription.</div>
         </div>
 
         <div class="mb-3">
@@ -45,7 +55,10 @@
               name="listing[price]"
               value="<%=listing.price%>"
               class="form-control"
+              required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Price should be valid.</div>
           </div>
           <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Country</label>
@@ -54,7 +67,10 @@
               name="listing[country]"
               value="<%=listing.country%>"
               class="form-control"
+              required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Country name should be valid.</div>
           </div>
         </div>
 
@@ -65,7 +81,10 @@
             name="listing[location]"
             value="<%=listing.location%>"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Location should be valid.</div>
         </div>
         <br />
         <button class="btn btn-dark add-btn">Edit your property details</button>
