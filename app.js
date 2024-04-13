@@ -5,6 +5,7 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
@@ -54,28 +55,22 @@ app.get("/listings/:id", async (req, res) => {
 });
 
 //Create Route
-app.post("/listings", async (req, res) => {
-  let { title, description, image, price, location, country } = req.body;
-  let listing = new Listing({
-    title: title,
-    description: description,
-    image: image,
-    price: price,
-    location: location,
-    country: country,
-  });
-  await listing
-    .save()
-    .then(() => {
-      res.redirect("/listings");
-    })
-    .catch((e) => {
-      console.log(e);
-      res.send(
-        "Some error occured while listing your property !! \n Please try again."
-      );
+app.post(
+  "/listings",
+  wrapAsync(async (req, res, next) => {
+    let { title, description, image, price, location, country } = req.body;
+    let listing = new Listing({
+      title: title,
+      description: description,
+      image: image,
+      price: price,
+      location: location,
+      country: country,
     });
-});
+    await listing.save();
+    res.redirect("/listings");
+  })
+);
 
 //Edit Route
 app.get("/listings/:id/edit", async (req, res) => {
@@ -112,6 +107,11 @@ app.delete("/listings/:id", async (req, res) => {
 //   console.log("Saved data");
 //   res.send("success");
 // });
+
+//Middlewares
+app.use((err, req, res, next) => {
+  res.send("Something went wrong!");
+});
 
 app.listen(port, () => {
   console.log(`Server running at port ${port}`);
