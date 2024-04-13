@@ -7,6 +7,8 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const Joi = require("joi");
+const listingSchema = require("./schema.js");
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
@@ -29,6 +31,17 @@ main()
 async function main() {
   await mongoose.connect(MONGO_URL);
 }
+
+//Schema Validation Function Using JOI
+const validateListing = (req, res, next) => {
+  let { error } = listingSchema.validate(req.body);
+  if (error) {
+    let errMsg = error.details.map((e) => e.message).join(",");
+    throw new ExpressError(400, errMsg);
+  } else {
+    next();
+  }
+};
 
 //Routes
 
@@ -64,11 +77,9 @@ app.get(
 //Create Route
 app.post(
   "/listings",
+  validateListing,
   wrapAsync(async (req, res, next) => {
     let { title, description, image, price, location, country } = req.body;
-    if (!title && !description) {
-      throw new ExpressError(404, "Send Valid Data for Listing.");
-    }
     let listing = new Listing({
       title: title,
       description: description,
@@ -77,6 +88,7 @@ app.post(
       location: location,
       country: country,
     });
+
     await listing.save();
     res.redirect("/listings");
   })
@@ -95,6 +107,7 @@ app.get(
 //Update in DB
 app.patch(
   "/listings/:id",
+  validateListing,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     if (!req.body.listing) {
