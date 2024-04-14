@@ -2,7 +2,7 @@
 <body>
   <div class="row mt-3">
     <div class="col-8 offset-2">
-      <h3>Listing Details</h3>
+      <h3><b><%=listing.title%></b></h3>
     </div>
     <div class="card col-6 offset-2">
       <img
@@ -12,7 +12,7 @@
       />
       <div class="card-body">
         <p class="card-text">
-          <b><%=listing.title%></b><br />
+          <br />
           <%=listing.description%> <br />
           &#8377;<%=listing.price.toLocaleString("en-IN")%> /night<br />
           <%=listing.location%> <br />
@@ -33,6 +33,44 @@
           <button class="btn btn-dark show-btn">Delete this Listing</button>
         </form>
       </div>
+    </div>
+    <div class="col-6 offset-2">
+      <hr />
+      <h4>Leave a Review</h4>
+      <form
+        action="/listings/<%=listing.id%>/review"
+        method="POST"
+        class="mb-4 needs-validation"
+        novalidate
+      >
+        <div class="mb-3 mt-3">
+          <label for="rating" class="form-label">Rating</label>
+          <input
+            type="range"
+            min="1"
+            max="5"
+            id="rating"
+            name="review[rating]"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="comment" class="form-label">Comment</label>
+          <textarea
+            class="form-control"
+            name="review[comment]"
+            id="comment"
+            cols="30"
+            rows="5"
+            required
+          ></textarea>
+          <div class="invalid-feedback">
+            Please add some comments for review.
+          </div>
+          <br />
+        </div>
+        <button class="btn btn-outline-dark">Submit</button>
+      </form>
     </div>
   </div>
 </body>
