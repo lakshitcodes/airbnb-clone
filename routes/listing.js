@@ -4,6 +4,7 @@ const wrapAsync = require("../utils/wrapAsync.js");
 const { listingSchema, reviewSchema } = require("../schema.js");
 const ExpressError = require("../utils/ExpressError.js");
 const Listing = require("../models/listing.js");
+const Joi = require("joi");
 
 //Schema Validation Function Using JOI
 const validateListing = (req, res, next) => {
@@ -43,19 +44,10 @@ router.get(
 
 //Create Route
 router.post(
-  "",
+  "/",
   validateListing,
   wrapAsync(async (req, res, next) => {
-    let { title, description, image, price, location, country } = req.body;
-    let listing = new Listing({
-      title: title,
-      description: description,
-      image: image,
-      price: price,
-      location: location,
-      country: country,
-    });
-
+    let listing = new Listing(req.body.listing);
     await listing.save();
     res.redirect("/listings");
   })
