@@ -37,8 +37,8 @@
         </form>
       </div>
     </div>
-    <%}%>
     <div class="col-6 offset-2">
+      <%}%> <%if(currUser) { %>
       <hr />
       <h4>Leave a Review</h4>
       <form
@@ -76,7 +76,7 @@
         <button class="btn btn-outline-dark">Submit</button>
       </form>
       <hr />
-
+      <%}%> <% if(listing.reviews.length) {%>
       <h4>Reviews</h4>
       <div class="row">
         <%for(review of listing.reviews){%>
@@ -102,6 +102,7 @@
         </div>
         <%}%>
       </div>
+      <%}%>
     </div>
   </div>
 </body>
