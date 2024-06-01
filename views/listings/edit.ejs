@@ -38,7 +38,10 @@
           >
           <div class="invalid-feedback">Please enter a short decription.</div>
         </div>
-
+        <div class="mb-3">
+          <label class="form-label">Original Image</label><br />
+          <img src="<%=originalImage%>" alt="<%=listing.image.filename%>" />
+        </div>
         <div class="mb-3">
           <label for="image" class="form-label">Upload New Image</label>
           <input type="file" name="listing[image]" class="form-control" />

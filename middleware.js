@@ -14,7 +14,7 @@ module.exports.validateListing = (req, res, next) => {
   }
 };
 
-//Schema Validation Function Using JOI
+//Review Validation Function Using JOI
 module.exports.validateReview = (req, res, next) => {
   let { error } = reviewSchema.validate(req.body);
   if (error) {
