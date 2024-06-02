@@ -1,4 +1,358 @@
+<link rel="stylesheet" href="/css/root.css" />
 <% layout("/layouts/boilerplate.ejs") %>
 <body>
-  <h1>I am root</h1>
+  <div class="box">
+    <div class="innerbox">
+      <div class="content">
+        <h1>Hi!</h1>
+        <h3>Welcome to Airbnb clone.</h3>
+        <p>
+          This project is a fully functional clone of Airbnb built using the
+          MERN stack (MongoDB, Express.js, Node.js) without React. The primary
+          objective of this project is to replicate the core features of the
+          original Airbnb platform while demonstrating my skills in full-stack
+          web development. This project showcases my ability to design and
+          implement a complex, user-centric web application from scratch,
+          employing best practices in software development and modern web
+          technologies.
+        </p>
+        <p>Developed by Lakshit Jain</p>
+      </div>
+      <div class="img">
+        <img class="hello-img" src="/img/Hello.gif" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="innerbox2">
+      <h4>Key Features: -</h4>
+      <ul class="outerlist">
+        <li>
+          <h5>User Authentication:</h5>
+          <ul>
+            <li>
+              Users can sign up and log in to the platform using secure
+              session-based authentication.
+            </li>
+            <li>
+              Only registered users have access to specific features such as
+              creating listings and giving reviews.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Dynamic Listing Management:</h5>
+          <ul>
+            <li>
+              Registered users can create, update, and delete their property
+              listings.
+            </li>
+            <li>
+              Listings include detailed information such as descriptions,
+              amenities, and pricing.
+            </li>
+            <li>
+              Users can also upload images to their listings for better visual
+              representation.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Review System:</h5>
+          <ul>
+            <li>
+              Users can leave reviews and ratings for properties they have
+              stayed in.
+            </li>
+            <li>
+              Only users who have stayed at a property can leave a review,
+              ensuring authenticity.
+            </li>
+            <li>Property owners can manage the reviews on their listings.</li>
+          </ul>
+        </li>
+        <li>
+          <h5>Interactive Maps:</h5>
+          <ul>
+            <li>
+              Listings are displayed on an interactive map, allowing users to
+              see the exact location of properties.
+            </li>
+            <li>
+              The map functionality helps users find properties in their desired
+              areas easily.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Permissions and Security:</h5>
+          <ul>
+            <li>
+              Only the owner of a listing can edit or delete it, ensuring
+              security and integrity of the data.
+            </li>
+            <li>
+              Similarly, only the author of a review can delete it, maintaining
+              authenticity in feedback.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="box">
+    <div class="innerbox2">
+      <h4>Technologies Used: -</h4>
+      <ul>
+        <li>Frontend: HTML, CSS, JavaScript</li>
+        <li>Backend: Node.js, Express.js</li>
+        <li>Database: MongoDB</li>
+        <li>Authentication: Passport.js</li>
+        <li>Maps: Mapbox API</li>
+        <li>Image Upload: Cloudinary API</li>
+        <li>Deployment: Heroku</li>
+      </ul>
+    </div>
+  </div>
+  <div class="box">
+    <div class="innerbox2">
+      <h4>Technical Implementation:</h4>
+      <ul class="outerlist">
+        <li>
+          <h5>RESTful API:</h5>
+          <ul>
+            <li>
+              The project follows the RESTful API design principles for creating
+              routes and handling HTTP requests.
+            </li>
+            <li>
+              The API endpoints are designed to be intuitive and easy to use for
+              developers and clients.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>CRUD Operations:</h5>
+          <ul>
+            <li>
+              The platform supports Create, Read, Update, and Delete operations
+              for listings and reviews.
+            </li>
+            <li>
+              Users can perform these operations seamlessly through the user
+              interface.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Middleware:</h5>
+          <ul>
+            <li>
+              Middleware functions are used to handle common tasks such as
+              authentication, error handling, and data validation.
+            </li>
+            <li>
+              Middleware functions ensure that the application is secure,
+              robust, and scalable.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Session Management:</h5>
+          <ul>
+            <li>
+              Sessions are managed using Express.js and Passport.js to
+              authenticate users and maintain their login status.
+            </li>
+            <li>
+              Session-based authentication ensures that users can access
+              protected routes and features securely.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Form Validation:</h5>
+          <ul>
+            <li>
+              Form data is validated using Joi to ensure that the input is
+              correct and secure.
+            </li>
+            <li>
+              Validation rules are defined for each form field to prevent
+              malicious or incorrect data from being submitted.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>File Uploads:</h5>
+          <ul>
+            <li>
+              Users can upload images for their listings using Multer and
+              Cloudinary.
+            </li>
+            <li>
+              Multer handles file uploads, while Cloudinary stores the images
+              and provides secure URLs for display.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Map Integration:</h5>
+          <ul>
+            <li>
+              Mapbox API is integrated to display interactive maps with property
+              locations.
+            </li>
+            <li>
+              Users can view listings on the map and click on markers to see
+              more details.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>MVC Architecture:</h5>
+          <ul>
+            <li>
+              The project follows the Model-View-Controller (MVC) architecture
+              to separate concerns and enhance maintainability.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Backend:</h5>
+          <ul>
+            <li>
+              Implemented with Node.js and Express.js, ensuring efficient
+              handling of server-side operations.
+            </li>
+            <li>
+              MongoDB is used as the database to store user information,
+              listings, and reviews.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h5>Frontend:</h5>
+          <ul>
+            <li>
+              Though not using React, the frontend is built using EJS templates
+              for server-side rendering, providing dynamic and interactive user
+              interfaces.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="box">
+    <div class="innerbox2">
+      <h4>Dependencies and Integrations:</h4>
+      <ul class="outerlist">
+        <li>
+          <h5>@mapbox/mapbox-sdk:</h5>
+          <p>
+            Used for integrating Mapbox services to display interactive maps.
+          </p>
+        </li>
+        <li>
+          <h5>Cloudinary:</h5>
+          <p>
+            Facilitates image uploads and storage, allowing users to add images
+            to their listings.
+          </p>
+        </li>
+        <li>
+          <h5>Connect-Flash:</h5>
+          <p>
+            Provides flash messages for session-based alerts and notifications.
+          </p>
+        </li>
+        <li>
+          <h5>Cookie-Parser:</h5>
+          <p>Parses cookies attached to the client request object.</p>
+        </li>
+        <li>
+          <h5>Dotenv:</h5>
+          <p>
+            Loads environment variables from a `.env` file, keeping sensitive
+            information secure.
+          </p>
+        </li>
+        <li>
+          <h5>EJS & EJS-Mate:</h5>
+          <p>Used for templating and rendering dynamic web pages.</p>
+        </li>
+        <li>
+          <h5>Express & Express-Session:</h5>
+          <p>
+            Core framework and session management for handling user sessions.
+          </p>
+          <h5>Joi:</h5>
+          <p>
+            Validates request data to ensure the integrity and security of the
+            inputs.
+          </p>
+        </li>
+        <li>
+          <h5>Method-Override:</h5>
+          <p>
+            Allows the use of HTTP verbs such as PUT or DELETE in places where
+            the client doesn't support it.
+          </p>
+        </li>
+        <li>
+          <h5>Mongoose:</h5>
+          <p>Provides elegant MongoDB object modeling for node.js.</p>
+        </li>
+        <li>
+          <h5>Multer & Multer-Storage-Cloudinary:</h5>
+          <p>
+            Middleware for handling multipart/form-data, used for uploading
+            files, and storing them on Cloudinary.
+          </p>
+        </li>
+        <li>
+          <h5>Passport, Passport-Local & Passport-Local-Mongoose:</h5>
+          <p>
+            Implements authentication using username and password with session
+            support.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="explorebox">
+    <div class="exploreinnerbox2">
+      <h4>Explore the Code:</h4>
+      <p>
+        <a href="https://github.com/lakshitcodes/airbnb-clone" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+            alt="GitHub"
+            width="24"
+            height="24"
+          />
+          GitHub Repository
+        </a>
+        - View the complete source code for this project on my GitHub.
+      </p>
+      <p>
+        <a href="linkedin.com/in/jainlakshit/" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+            alt="LinkedIn"
+            width="24"
+            height="24"
+          />
+          LinkedIn Profile
+        </a>
+        - Connect with me on LinkedIn for professional updates and networking.
+      </p>
+      <p>
+        Thank you for visiting my Airbnb clone project. I hope you find the
+        functionalities and implementation impressive. Feel free to explore the
+        platform and reach out if you have any questions or feedback.
+      </p>
+    </div>
+  </div>
 </body>

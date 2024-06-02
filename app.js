@@ -103,4 +103,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => {
   console.log(`Server running at port ${port}`);
+  console.log(`Access the Project : http://localhost:${port}/`);
 });
