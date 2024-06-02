@@ -98,13 +98,19 @@ This project is a fully functional clone of Airbnb built using the MERN stack (M
 
 - Please create a .env file in the root directory of your project and add the following environment variables. This file is crucial for storing sensitive information securely and ensuring that your application can access necessary external services.
 
-_Instructions_: -`CLOUD_NAME`: Replace your_cloudinary_cloud_name with your unique Cloudinary cloud name. -`CLOUD_API_KEY`: Replace your_cloudinary_api_key with the API key provided by Cloudinary. -`CLOUD_API_SECRET`: Replace your_cloudinary_api_secret with the API secret provided by Cloudinary. -`MAP_TOKEN`: Replace your_mapbox_public_access_token with your public access token from Mapbox.\*
+_Instructions_:
+
+- `CLOUD_NAME`: Replace your_cloudinary_cloud_name with your unique Cloudinary cloud name.
+- `CLOUD_API_KEY`: Replace your_cloudinary_api_key with the API key provided by Cloudinary.
+- `CLOUD_API_SECRET`: Replace your_cloudinary_api_secret with the API secret provided by Cloudinary.
+- `MAP_TOKEN`: Replace your_mapbox_public_access_token with your public access token from Mapbox.\*
 
 _How to Use:_
--Copy the contents of this .env.example file.
--Create a new file named .env in the root directory of your project.
--Paste the copied content into the .env file.
--Replace the placeholder values with your actual credentials.
+
+- Copy the contents of this .env.example file.
+- Create a new file named .env in the root directory of your project.
+- Paste the copied content into the .env file.
+- Replace the placeholder values with your actual credentials.
 
 4. **Start the application**:
 
