@@ -19,6 +19,7 @@ const initDB = async () => {
   initData.data = initData.data.map((obj) => ({
     ...obj,
     owner: "6655b02e119590cdf9d28a42",
+    geometry: { type: "Point", coordinates: [77.2088, 28.6139] },
   }));
   await Listing.insertMany(initData.data);
   console.log("Data was initialized successfully !!");
