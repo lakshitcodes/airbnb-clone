@@ -22,15 +22,15 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/listings">All Listing</a>
-        <a class="nav-link" href="/listings/new">New Listing</a>
+        <a class="nav-link" href="/listings">Explore</a>
       </div>
       <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <%if(!currUser) {%>
-        <a class="nav-link" href="/signup">SignUp</a>
-        <a class="nav-link" href="/login">Log In</a>
+        <a class="nav-link" href="/signup"><b>SignUp</b></a>
+        <a class="nav-link" href="/login"><b>Log In</b></a>
         <%}%> <%if(currUser) {%>
-        <a class="nav-link" href="/logout">Log Out</a>
+        <a class="nav-link" href="/logout"><b>Log Out</b></a>
         <%}%>
       </div>
     </div>
