@@ -39,7 +39,7 @@ This project is a fully functional clone of Airbnb built using the MERN stack (M
 - **Authentication**: Passport.js
 - **Maps**: Mapbox API
 - **Image Upload**: Cloudinary API
-- **Deployment**: Heroku
+- **Deployment**: Render
 
 ## Technical Implementation
 
