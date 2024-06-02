@@ -100,3 +100,9 @@ footer .f-info-links a:hover {
 .show-btn {
   width: 100% !important;
 }
+
+/* Map  */
+#map {
+  height: 400px;
+  width: 85vh;
+}
