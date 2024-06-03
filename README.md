@@ -1,4 +1,4 @@
-# Airbnb Clone
+# UrbanRetreats : An Airbnb Lookalike
 
 This project is a fully functional clone of Airbnb built using the MERN stack (MongoDB, Express.js, Node.js) without React. The primary objective of this project is to replicate the core features of the original Airbnb platform while demonstrating my skills in full-stack web development. This project showcases my ability to design and implement a complex, user-centric web application from scratch, employing best practices in software development and modern web technologies.
 
@@ -41,7 +41,7 @@ This project is a fully functional clone of Airbnb built using the MERN stack (M
 - **Authentication**: Passport.js
 - **Maps**: Mapbox API
 - **Image Upload**: Cloudinary API
-- **Deployment**: Vercel
+- **Deployment**: Render
 
 ## Technical Implementation
 
