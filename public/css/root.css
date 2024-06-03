@@ -12,13 +12,16 @@ body {
   width: 60vw;
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: auto; */
 }
 .innerbox {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 .hello-img {
-  width: 500px;
+  width: 26vw;
 }
 .content {
   margin-left: 3rem;
@@ -26,6 +29,7 @@ body {
 }
 .innerbox2 {
   padding: 20px;
+  width: 100%;
   margin: 10px 30px;
 }
 .explorebox {
@@ -104,6 +108,9 @@ body {
 .explorebox {
   animation: fadeIn 2s ease-in;
 }
+.img {
+  margin: auto;
+}
 /* Hover effect for links */
 .exploreinnerbox2 a {
   text-decoration: none;
@@ -115,4 +122,22 @@ body {
 .exploreinnerbox2 a:hover {
   color: #005582; /* Darker LinkedIn blue */
   text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 1600px) {
+  .box,
+  .innerbox,
+  .innerbox2,
+  .explorebox,
+  .exploreinnerbox2 {
+    width: 100% !important;
+  }
+  .box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .innerbox {
+    flex-direction: column;
+  }
 }
