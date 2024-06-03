@@ -2,7 +2,7 @@
 
 This project is a fully functional clone of Airbnb built using the MERN stack (MongoDB, Express.js, Node.js) without React. The primary objective of this project is to replicate the core features of the original Airbnb platform while demonstrating my skills in full-stack web development. This project showcases my ability to design and implement a complex, user-centric web application from scratch, employing best practices in software development and modern web technologies.
 
-## Project is live at : https://airbnb-git-main-lakshit.vercel.app/
+## Project is live at : https://urban-retreats.onrender.com
 
 ## Table of Contents
 
